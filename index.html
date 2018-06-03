@@ -1,0 +1,107 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>PixelArt</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <link rel="apple-touch-icon" href="icon.png">
+   <!-- Place favicon.ico in the root directory -->
+   <link rel="icon" type="image/png" href="https://pixelart.dannygsmith.me/favicon-96x96.png" sizes="96x96">
+   <link rel="stylesheet" href="css/materialize.min.css">
+   <link rel="stylesheet" href="css/spectrum.css">
+   <link rel="stylesheet" href="css/styles.css">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+   <div id="aside" class="aside">
+      <h1>Pixel Art Maker</h1>
+
+      <form id="sizePicker" class="sizePicker">
+         <h2>Grid Size</h2>
+         <div class="gridContainer">
+            <div class="grid-height">
+               <label for="inputHeight">Grid Height:</label>
+               <input type="number" id="inputHeight" name="height"
+                     min="1" max="50" value="30">
+            </div>
+
+            <div class="grid-width">
+               <label for="inputWidth">Grid Width:</label>
+               <input type="number" id="inputWidth" name="width"
+                      min="1" max="50" value="30">
+            </div>
+
+            <div class="form-group button-pick">
+               <input type="submit" value="Create New Session" class="waves-effect waves-light btn">
+            </div>
+         </div>
+      </form> <!-- form .sizePicker -->
+
+      <form id="color-picker" class="color-picker">
+         <div class="form-group pickerGroup row">
+            <div>
+               <h2 class="my-color-picker">Color Picker</h2>
+            </div>
+            <div id="color-picker-wrapper">
+               <input type='color' id="colorPicker"/>
+            </div>
+         </div>
+      </form>
+
+      <!--Saved canvas area, using browser cache-->
+      <div id="saved-canvases-wrapper">
+         <h2 class="thin-bottom">Save Canvas</h2>
+         <form id="canvas-form" class="canvas-form">
+            <div class="saveAs">
+               <div class="input-field canvasName">
+                  <label for="canvas-name" class="canvas-name">Save as:</label>
+                  <input type="text" id="canvas-name" name="canvas-name"
+                         class="canvas-save-as" maxlength="20">
+               </div>
+               <div class="canvas-buttons">
+                  <div class="input-field left-save">
+                     <input type="submit" id="save" value="Save"
+                            class="waves-effect waves-light btn teal lighten-1">
+                  </div>
+                  <div class="input-field right-erase">
+                     <input type="submit" id="erase" value="Erase"
+                            class="waves-effect waves-light btn materialize-red lighten-2">
+                  </div>
+               </div>
+            </div>
+         </form>
+         <div id="savedCanvas" class="savedCanvas">
+         </div>
+         <form id="saved-canvases" class="saved-canvases">
+            <p class="empty-message">No saved canvases</p>
+         </form>
+         <div class="remove-saved-canvases remove-saved">
+            <a href="#" id="remove-saved-canvases"
+               class="remove waves-effect waves-light btn materialize-red lighten-2">Remove all</a>
+         </div>
+
+      </div>
+
+   </div>
+
+   <!-- ==============================================================================-->
+
+   <div class="col mainContent">
+      <!--<div class="right">-->
+         <table id="pixel_canvas"></table>
+      <!--</div>-->
+   </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write( '<script src="js/vendor/jquery-3.2.1.min.js"><\/script>' )</script>
+<script src="js/materialize.js"></script>
+<script src="js/spectrum.js"></script>
+<script src="js/designs.js"></script>
+</div>
+</body>
+</html>
